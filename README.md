@@ -1,5 +1,7 @@
 # Dentology: Topological Data Analysis for Dentists 🦷
 
+![header image showing a robot dentist](figs/header_image.png)
+
 Dentology applies cutting-edge mathematical tools to dental imaging, offering innovative methods for cavity detection and analysis.
 
 ## Key Features
