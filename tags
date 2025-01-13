@@ -29,8 +29,10 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	6.1.0	/v6.1.0/
+Cavity Detection Pipeline	README.md	/^## Cavity Detection Pipeline$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
 Dentology: Topological Data Analysis for Dentists 🦷	README.md	/^# Dentology: Topological Data Analysis for Dentists 🦷$/;"	c
 Disclaimer	README.md	/^## Disclaimer$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
 Installation	README.md	/^## Installation$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
-Key Features	README.md	/^## Key Features$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
+Teeth Counting Pipeline	README.md	/^### Teeth Counting Pipeline$/;"	S	section:Dentology: Topological Data Analysis for Dentists 🦷""Upcoming Features
+Upcoming Features	README.md	/^## Upcoming Features$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
 Usage	README.md	/^## Usage$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
