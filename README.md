@@ -20,11 +20,11 @@ The workflow of the CDP is as follows:
 
 ### Teeth Counting Pipeline
 
-We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-edge tool for counting the number of teeth in a patient's mouth. It uses Persistent Homology to analyze the topological features of the patient's dental X-ray image. The TCP will also be able to inform the dentist if the patient has teeth at all, saving valuable time and resources in these cases.
+We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-edge tool for counting the number of teeth in a patient's mouth. It uses Persistent Homology to analyze the topological features of the patient's dental X-ray image. The TCP will also be able to inform the dentist if the patient has any teeth at all, saving valuable time and resources in these cases.
 
 ---
 
-## Installation
+## Installation and Usage
 Clone the repository:
 ```bash
 git clone https://github.com/odinhg/Dentology-TDA-for-Dentists 
@@ -32,7 +32,6 @@ cd Dentology-TDA-for-Dentists
 pip install -r requirements.txt
 ```
 
-## Usage
 1. Upload a dental X-ray image.
 2. Run the Dentology pipeline.
 3. Interpret the results with our cutting-edge `ToothMapper` function.
@@ -45,11 +44,9 @@ diagram = analyze_xray("dental_xray.png")
 diagram.plot()
 ```
 
-## Disclaimer
-This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly.
-
 ---
 
-By the way, happy 1st of April! 
+## Disclaimer
+This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. Also, happy 1st of April! 
 
 
