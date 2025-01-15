@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     # Parse command line arguments
     parser = argparse.ArgumentParser(description="Sample a point cloud from STL file")
-    parser.add_argument("--filename", type=str, help="Path to the STL file", default="data/stl/premolar_normal.stl")
+    parser.add_argument("--filename", type=str, help="Path to the STL file", default="data/premolar_normal.stl")
     parser.add_argument("--plot_mesh", help="Plot the 3D mesh", action=argparse.BooleanOptionalAction, default = False)
     args = parser.parse_args()
     filename = pathlib.Path(args.filename)
@@ -49,4 +49,6 @@ if __name__ == "__main__":
     # Plot persistence diagram
     fig, ax = plt.subplots(figsize=(10, 10))
     plot_persistence_diagram(diag, axes=ax)
+    plt.title(f"Persistence Diagram of {filename}")
+    fig.tight_layout()
     plt.show()
