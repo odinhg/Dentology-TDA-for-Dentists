@@ -44,9 +44,24 @@
 !_TAG_ROLE_DESCRIPTION!Python!unknown	imported	/imported from the other module/
 !_TAG_ROLE_DESCRIPTION!Python!unknown	indirectlyImported	/classes\/variables\/functions\/modules imported in alternative name/
 Cavity Detection Pipeline	README.md	/^## Cavity Detection Pipeline$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
+Clone the repository:	README.md	/^### Clone the repository:$/;"	S	section:Dentology: Topological Data Analysis for Dentists 🦷""Installation and Usage
 Dentology: Topological Data Analysis for Dentists 🦷	README.md	/^# Dentology: Topological Data Analysis for Dentists 🦷$/;"	c
 Disclaimer	README.md	/^## Disclaimer$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
+Generating Point Clouds	README.md	/^### Generating Point Clouds$/;"	S	section:Dentology: Topological Data Analysis for Dentists 🦷""Installation and Usage
 Installation and Usage	README.md	/^## Installation and Usage$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
+Running the Cavity Detection Pipeline	README.md	/^### Running the Cavity Detection Pipeline$/;"	S	section:Dentology: Topological Data Analysis for Dentists 🦷""Installation and Usage
 Teeth Counting Pipeline	README.md	/^### Teeth Counting Pipeline$/;"	S	section:Dentology: Topological Data Analysis for Dentists 🦷""Upcoming Features
 Upcoming Features	README.md	/^## Upcoming Features$/;"	s	chapter:Dentology: Topological Data Analysis for Dentists 🦷
-mesh	sample_point_clouds.py	/^mesh = trimesh.load("")$/;"	v
+_	sample_point_clouds.py	/^    point_cloud, _ = trimesh.sample.sample_surface_even(mesh, n_points)$/;"	v
+args	sample_point_clouds.py	/^    args = parser.parse_args()$/;"	v
+ax	sample_point_clouds.py	/^        ax = fig.add_subplot(111, projection='3d')$/;"	v
+fig	sample_point_clouds.py	/^        fig = plt.figure()$/;"	v
+filename	sample_point_clouds.py	/^    filename = args.filename$/;"	v
+mesh	sample_point_clouds.py	/^    mesh = trimesh.load(filename)$/;"	v
+n_points	sample_point_clouds.py	/^    n_points = args.n_points$/;"	v
+np	sample_point_clouds.py	/^import numpy as np$/;"	I	nameref:module:numpy
+output	sample_point_clouds.py	/^    output = args.output$/;"	v
+parser	sample_point_clouds.py	/^    parser = argparse.ArgumentParser(description="Sample a point cloud from STL file")$/;"	v
+plot	sample_point_clouds.py	/^    plot = args.plot$/;"	v
+plt	sample_point_clouds.py	/^import matplotlib.pyplot as plt$/;"	I	nameref:module:matplotlib.pyplot
+point_cloud	sample_point_clouds.py	/^    point_cloud, _ = trimesh.sample.sample_surface_even(mesh, n_points)$/;"	v

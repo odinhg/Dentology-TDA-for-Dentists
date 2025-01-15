@@ -25,23 +25,49 @@ We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-
 ---
 
 ## Installation and Usage
-Clone the repository:
+
+### Clone the repository:
+
 ```bash
 git clone https://github.com/odinhg/Dentology-TDA-for-Dentists 
 cd Dentology-TDA-for-Dentists
 pip install -r requirements.txt
 ```
 
-1. Upload a dental X-ray image.
-2. Run the Dentology pipeline.
-3. Interpret the results with our cutting-edge `ToothMapper` function.
+### Generating Point Clouds
 
-**Example:**
-```python
-from dentology import analyze_xray
+If the patient brings a 3D model of their teeth, you can generate a point cloud from it to use in the Cavity Detection Pipeline. Dentology provides a script to sample a point cloud from an STL file. To generate a point cloud from an STL file, you can use the `sample_point_cloud.py` script. For example:
 
-diagram = analyze_xray("dental_xray.png")
-diagram.plot()
+```bash
+python sample_point_clouds.py --filename data/stl/premolar_two_cavities.stl --n_points 3000 --output data/point_clouds/premolar_two_cavities.npy --plot
+```
+
+This will sample 3000 points from the STL file `data/stl/premolar_two_cavities.stl`, save the point cloud to `data/point_clouds/premolar_two_cavities.npy`, and plot the point cloud for visualization. Here is the full usage information for the script: 
+
+```text
+usage: sample_point_clouds.py [-h] [--filename FILENAME] [--n_points N_POINTS] [--output OUTPUT]
+                              [--plot | --no-plot]
+
+Sample a point cloud from STL file
+
+options:
+  -h, --help           show this help message and exit
+  --filename FILENAME  Path to the STL file
+  --n_points N_POINTS  Number of points to sample
+  --output OUTPUT      Path to save the point cloud
+  --plot, --no-plot    Plot the point cloud
+```
+
+| Input STL 3D Model | Output Point Cloud Sample |
+|:------------:|:-------------------:|
+| ![3d tooth model](figs/premolar_3d_model_normal.png) | ![point cloud](figs/premolar_point_cloud_normal.png) |
+
+### Running the Cavity Detection Pipeline
+
+To run the Cavity Detection Pipeline, you can use the `cavity_detection.py` script. For example:
+
+```bash
+python cavity_detection.py --point_cloud data/point_clouds/premolar_two_cavities.npy --output data/cavity_detection_results/premolar_two_cavities.png
 ```
 
 ---
