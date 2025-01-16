@@ -21,7 +21,7 @@ Let $X$ be a topological space and $f\colon X\to\mathbb{R}$ a function. We consi
 In the context of cavity detection, we consider a tooth as a 3D model $X\subseteq\mathbb{R}^ 3$. Since we only care about the zero-dimensional persistent homology, we consider $X$ as the wireframe (i.e., $1$-skeleton) of the tooth embedded in $\mathbb{R}^3$. So we have a $1$-dimensional geometric simplicial complex representing the tooth. Let $X_k$ denote the $k$-skeleton of $X$. We define $f\colon X\to\mathbb{R}$ from a function $f_0\colon X_0\to\mathbb{R}$ on the vertices as $f(\sigma) = \max_{x\in\sigma} f_0(x)$. The filtration $T(X,f)$ is then given by
 
 $$
-T(X,f)_r = \{\sigma\in X\mid f_0(x)\leq r\text{ for all }x\in\sigma\}.
+T(X,f)_r = \lbrace\sigma\in X\mid f_0(x)\leq r\text{ for all }x\in\sigma\rbrace.
 $$
 
 In the implementation, we use the projection $f_0(x,y,z)=z$ to detect cavities on the tooth surface (pit and fissure cavities). The projections $f_0(x,y,z)=x$ and $f_0(x,y,z)=y$ can be used to to detect smooth surface cavities and root cavities.
