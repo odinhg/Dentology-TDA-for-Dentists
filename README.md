@@ -10,9 +10,25 @@ The main feature of Dentology is the Cavity Detection Pipeline (CDP). It is a st
 
 The workflow of the CDP is as follows:
 
-1. **Feature Extraction**: Extract the patient's tooth to be analyzed and 3D scan it to create a point cloud.
-2. **Mapper Algorithm**: Apply the Mapper algorithm to generate a graph representation of the point cloud.
-3. **Cavity Detection**: Identify cavities in the patient's tooth based on the topological features of the Mapper graph.
+1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put thetooth back in the patient's mouth!
+2. **Cavity Detection**: Run the Cavity Detection Pipeline using Dentology.
+3. **Analysis**: Analyze the persistence diagram to identify cavities in the tooth.
+
+### Mathematical Background
+
+Let $X$ be a topological space and $f\colon X\to\mathbb{R}$ a function. We consider the filtration $T(X,f)$ of $X$ induced by $f$ given in filtration degree $r\in\mathbb{R}$ as $f^{-1}((-\infty,r])$. That is, $T(X,f)_r$ is the sublevel set of $f$ at level $r$. We are then interested in computing the persistent homology of the filtration $T(X,f)$. 
+
+In the context of cavity detection, we consider a tooth as a 3D model $X\subseteq\mathbb{R}^ 3$. Since we only care about the zero-dimensional persistent homology, we consider $X$ as the wireframe (i.e., $1$-skeleton) of the tooth embedded in $\mathbb{R}^3$. So we have a $1$-dimensional geometric simplicial complex representing the tooth. Let $X_k$ denote the $k$-skeleton of $X$. We define $f\colon X\to\mathbb{R}$ from a function $f_0\colon X_0\to\mathbb{R}$ on the vertices as $f(\sigma) = \max_{x\in\sigma} f_0(x)$. The filtration $T(X,f)$ is then given by
+
+$$
+T(X,f)_r = \{\sigma\in X\mid f_0(x)\leq r\text{ for all }x\in\sigma\}.
+$$
+
+In the implementation, we use the projection $f_0(x,y,z)=z$ to detect cavities on the tooth surface (pit and fissure cavities). The projections $f_0(x,y,z)=x$ and $f_0(x,y,z)=y$ can be used to to detect smooth surface cavities and root cavities.
+
+### Implementation Details
+
+We use Trimesh to load the 3D model and get the (unique) edges. We then construct the filtration $T(X,f)$ and compute the persistent homology using the Gudhi library. The persistence diagram is then plotted for analysis.
 
 ---
 

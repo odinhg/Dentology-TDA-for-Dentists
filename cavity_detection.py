@@ -28,7 +28,6 @@ def build_simplex_tree(mesh: trimesh.Trimesh) -> SimplexTree:
     return st
 
 if __name__ == "__main__":
-
     # Parse command line arguments
     parser = argparse.ArgumentParser(description="Sample a point cloud from STL file")
     parser.add_argument("--filename", type=str, help="Path to the STL file", default="data/premolar_normal.stl")

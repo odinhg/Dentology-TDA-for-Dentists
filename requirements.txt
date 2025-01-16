@@ -1,0 +1,4 @@
+gudhi==3.10.1
+matplotlib==3.10.0
+numpy==1.26.4
+trimesh==4.5.3
