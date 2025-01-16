@@ -10,7 +10,7 @@ The main feature of Dentology is the Cavity Detection Pipeline (CDP). It is a st
 
 The workflow of the CDP is as follows:
 
-1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put thetooth back in the patient's mouth!
+1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put the tooth back in the patient's mouth!
 2. **Cavity Detection**: Run the Cavity Detection Pipeline using Dentology.
 3. **Analysis**: Analyze the persistence diagram to identify cavities in the tooth.
 
