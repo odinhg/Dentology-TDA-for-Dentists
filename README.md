@@ -2,16 +2,18 @@
 
 ![header image showing a robot dentist](figs/header_image.png)
 
-Dentology applies cutting-edge mathematical tools to dental imaging, offering innovative methods for cavity detection and analysis.
+**Dentology** – *"Filling the hole in dental care since 2025."*
+
+Dentology is a cutting-edge tool for dentists that uses Topological Data Analysis (TDA) to analyze digital tooth twins. It provides state-of-the-art tools for cavity detection and teeth counting. Dentology is designed to help dentists make better decisions and improve patient care, while also saving time and resources. In other words, Dentology is the tooth fairy of the 21st century where the coins have been replaced with value-added insights.
 
 ## Cavity Detection Pipeline
 
-The main feature of Dentology is the Cavity Detection Pipeline (CDP). It is a state-of-the-art tool for identifying cavities in dental X-ray images. It uses Topological Data Analysis (TDA) to detect cavities in a patient's teeth. More specifically, it uses the Mapper algorithm.
+The main feature of Dentology is the Cavity Detection Pipeline (CDP): A SoTA tool for identifying various types of cavities. It uses Topological Data Analysis (TDA) to detect cavities in a patient's teeth.
 
-The workflow of the CDP is as follows:
+The workflow of the CDP is extremely simple and can be summarized in three steps: 
 
-1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put the tooth back in the patient's mouth!
-2. **Cavity Detection**: Run the Cavity Detection Pipeline using Dentology.
+1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put the tooth back.
+2. **Cavity Detection**: Run the Cavity Detection Pipeline in Dentology.
 3. **Analysis**: Analyze the persistence diagram to identify cavities in the tooth.
 
 ### Mathematical Background
@@ -21,22 +23,14 @@ Let $X$ be a topological space and $f\colon X\to\mathbb{R}$ a function. We consi
 In the context of cavity detection, we consider a tooth as a 3D model $X\subseteq\mathbb{R}^ 3$. Since we only care about the zero-dimensional persistent homology, we consider $X$ as the wireframe (i.e., $1$-skeleton) of the tooth embedded in $\mathbb{R}^3$. So we have a $1$-dimensional geometric simplicial complex representing the tooth. Let $X_k$ denote the $k$-skeleton of $X$. We define $f\colon X\to\mathbb{R}$ from a function $f_0\colon X_0\to\mathbb{R}$ on the vertices as $f(\sigma) = \max_{x\in\sigma} f_0(x)$. The filtration $T(X,f)$ is then given by
 
 $$
-T(X,f)_r = \lbrace\sigma\in X\mid f_0(x)\leq r\text{ for all }x\in\sigma\rbrace.
+T(X,f)_r = \left\lbrace\sigma\in X\mid f_0(x)\leq r\text{ for all }x\in\sigma\right\rbrace.
 $$
 
 In the implementation, we use the projection $f_0(x,y,z)=z$ to detect cavities on the tooth surface (pit and fissure cavities). The projections $f_0(x,y,z)=x$ and $f_0(x,y,z)=y$ can be used to to detect smooth surface cavities and root cavities.
 
 ### Implementation Details
 
-We use Trimesh to load the 3D model and get the (unique) edges. We then construct the filtration $T(X,f)$ and compute the persistent homology using the Gudhi library. The persistence diagram is then plotted for analysis.
-
----
-
-## Upcoming Features
-
-### Teeth Counting Pipeline
-
-We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-edge tool for counting the number of teeth in a patient's mouth. It uses Persistent Homology to analyze the topological features of the patient's dental X-ray image. The TCP will also be able to inform the dentist if the patient has any teeth at all, saving valuable time and resources in these cases.
+Dentology uses Trimesh to load the 3D model and get the (unique) edges. The filtration $T(X,f)$ is constructed, and Gudhi is used to compute the persistent homology. The persistence diagram is then plotted for analysis.
 
 ---
 
@@ -76,7 +70,14 @@ We can clearly see the two persistence pairs in the upper right corner of the di
 
 ---
 
+## Upcoming Features
+
+### Teeth Counting Pipeline
+
+We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-edge tool for counting the number of teeth in a patient's mouth. It uses Persistent Homology to analyze the topological features of the patient's dental X-ray image. The TCP will also be able to inform the dentist if the patient has any teeth at all, saving valuable time and resources in these cases.
+
+---
+
 ## Disclaimer
 This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. Also, happy 1st of April! 
-
 
