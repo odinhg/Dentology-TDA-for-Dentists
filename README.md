@@ -12,9 +12,15 @@ The main feature of Dentology is the Cavity Detection Pipeline (CDP): A SoTA too
 
 The workflow of the CDP is extremely simple and can be summarized in three steps: 
 
-1. **Feature Extraction**: Extract the patient's tooth and make a 3D model of it. Remember to put the tooth back.
+1. **Feature Extraction**: 3D scan the patient's tooth to create a digital model.
 2. **Cavity Detection**: Run the Cavity Detection Pipeline in Dentology.
 3. **Analysis**: Analyze the persistence diagram to identify cavities in the tooth.
+
+|![dentist 3d scanning a tooth](figs/itero-1.png)|
+|:--:|
+|**Figure:** A dentist 3D scanning a patient's tooth to create a digital model using an [iTero](https://www.itero.com/) intraoral scanner ([image source](https://arizonabraces.com/how-does-itero-scanner-work/)).|
+
+If you do not have access to an intraoral scanner, you can extract the tooth from the patient and have someone model it in a CAD software. Just remember to ask the patient for permission before extracting their tooth and to return it after the modeling is done.
 
 ### Mathematical Background
 
@@ -76,8 +82,13 @@ We can clearly see the two persistence pairs in the upper right corner of the di
 
 We are currently developing the Teeth Counting Pipeline (TCP). TCP is a cutting-edge tool for counting the number of teeth in a patient's mouth. It uses Persistent Homology to analyze the topological features of the patient's dental X-ray image. The TCP will also be able to inform the dentist if the patient has any teeth at all, saving valuable time and resources in these cases.
 
+### LLM Integration
+
+We are also working on integrating the Large Language Model (LLM) into Dentology. The LLM will be able to generate a detailed report based on the results of the CDP and TCP. The report will include information on the detected cavities, the number of teeth, and other relevant dental information. When OpenAI achieves ~~AGI~~ superintelligence, the LLM will also be able to perform dental procedures autonomously. 
+
 ---
 
 ## Disclaimer
-This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. Also, happy 1st of April! 
+
+This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. The author is not responsible for any damage caused by using this tool. Any brand names mentioned in this document are used for illustrative purposes only and do not imply endorsement. Also, happy 1st of April! 
 
