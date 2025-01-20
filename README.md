@@ -90,5 +90,5 @@ We are also working on integrating the Large Language Model (LLM) into Dentology
 
 ## Disclaimer
 
-This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. The author is not responsible for any damage caused by using this tool. Any brand names mentioned in this document are used for illustrative purposes only and do not imply endorsement. Also, happy 1st of April! 
+This tool is intended for research purposes only and should not replace professional dental care. Please visit your dentist regularly. The author is not responsible for any damage caused by using this tool. Any brand names mentioned in this document are used for illustrative purposes only and do not imply endorsement. Batteries not included. Persistence computations pose a choking hazard for your CPU. Also, happy 1st of April!
 
